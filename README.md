@@ -2,8 +2,24 @@
 
 Exposes information about the build of projects.
 
-You have to set release variables in this package using linker flags, for example in your Makefile:
+## Usage
 
+Write your code
+```
+package main
+
+import (
+    "fmt"
+    "github.com/snebel29/go-release/pkg/release"
+)
+
+func main() {
+    fmt.Println(release.Get().String())
+}
+```
+
+
+Then you have to set release variables in this package using linker flags, for example in your Makefile:
 ```
 PKG         = github.com/snebel29/go-release/pkg/release
 BRANCH      = $(shell git rev-parse --abbrev-ref HEAD)
@@ -30,3 +46,4 @@ Then build
 ```
 $ go build -ldflags ${LDFLAGS} main.go
 ```
+
