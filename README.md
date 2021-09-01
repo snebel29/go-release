@@ -36,9 +36,9 @@ endif
 
 LDFLAGS = "-X ${RELEASE_PKG}.version=${VERSION} \
            -X ${RELEASE_PKG}.branch=${BRANCH} \
-           -X ${RELEASE_PKG}.branch=${COMMIT} \
-           -X ${RELEASE_PKG}.branch=${COMMIT_TIME} \
-           -X ${RELEASE_PKG}.branch=${BUILD_TIME}"
+           -X ${RELEASE_PKG}.commit=${COMMIT} \
+           -X ${RELEASE_PKG}.commitTime=${COMMIT_TIME} \
+           -X ${RELEASE_PKG}.buildTime=${BUILD_TIME}"
 ```
 
 Then build
